@@ -1,0 +1,88 @@
+* {
+    margin: 0;padding: 0;
+}
+
+body {
+    min-width: 800px;
+    background-color:  black;
+}
+.clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+    height: 0;
+}
+a,
+li {
+    list-style: none;
+    text-decoration: none;
+    color: #fff;
+}
+header {
+    position: relative;
+    margin-top: 20px;
+    width: 100%;
+    border-bottom: 1px solid #141414;
+    padding-bottom: 23px;
+}
+.headerLogo {
+    position: absolute;
+    top: 0;
+    left: 60px;
+}
+.headerLogo img {
+    width: 70px;
+}
+.headerItems {
+        text-align: center;
+}
+.headerItems li {
+    font-size: 16px;
+    display: inline-block;
+    margin: 0 5%;
+    border: 1px solid salmon;
+}
+
+.headerMenu {
+   position: absolute;
+   top: 0;
+   right: 60px;  
+   color: #fff;
+   /* border: 1px solid royalblue; */
+}
+
+main .preview {
+    background-image: url(../img/xiao2.png);
+    /* 想要背景图片调整透明度 */
+    background-position: top left;
+    float: left;
+    width: 25%;
+    height: 100%;
+    color: #fff;
+    box-sizing: border-box;
+    border-right: 1px solid #141414;
+    padding-left: 40px;
+    padding-top: 43px;
+    padding-bottom: 45px;
+}
+main .preview h1 {
+    font-weight: 100;
+    width: 125px;
+
+    background-color: rgba(0, 0, 0, 0.548);
+    font-size: 5vw;
+}
+main .preview .num {
+    display: inline-block;
+    margin-top: 300px;
+    box-sizing: border-box;
+    padding-bottom: 10px;
+    border-bottom: .1vw solid #fff; 
+}
+main .preview:hover {
+    background-image: url(../img/xiao.png);
+}
+main .preview:hover h1 {
+    background-color: rgba(233, 171, 89, 0.534);
+
+}
