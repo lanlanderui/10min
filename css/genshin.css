@@ -40,7 +40,7 @@ header {
     font-size: 16px;
     display: inline-block;
     margin: 0 5%;
-    border: 1px solid salmon;
+    /* border: 1px solid salmon; */
 }
 
 .headerMenu {
@@ -54,7 +54,7 @@ header {
 main .preview {
     background-image: url(../img/xiao2.png);
     /* 想要背景图片调整透明度 */
-    background-position: top left;
+    background-position: -92px 0px;
     float: left;
     width: 25%;
     height: 100%;
@@ -64,6 +64,7 @@ main .preview {
     padding-left: 40px;
     padding-top: 43px;
     padding-bottom: 45px;
+    
 }
 main .preview h1 {
     font-weight: 100;
@@ -80,6 +81,7 @@ main .preview .num {
     border-bottom: .1vw solid #fff; 
 }
 main .preview:hover {
+   transition: .5s;
     background-image: url(../img/xiao.png);
 }
 main .preview:hover h1 {
