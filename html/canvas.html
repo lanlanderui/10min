@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0px;
+        }
+        body {
+            background-color: antiquewhite;
+        }
+        canvas {
+            background-color: rgb(211, 211, 211);
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width=500 height=500></canvas>
+</body>
+<script>
+    var canvas = document.getElementById('canvas');
+    var context = canvas.getContext('2d');
+
+    var painting =false;
+    var lastPoint={x: undefined, y: undefined}
+
+    canvas.onmousedown=function(incident){
+        painting=true;
+        var x = incident.clientX;
+        var y = incident.clientY;
+        drawCircle(x,y,5);
+        lastPoint={"x":x, "y":y}    //"x":x 不能写成 x:"x"  他们的意思好像是不一样的
+    }
+
+    canvas.onmousemove = function(incident){
+        var x = incident.clientX
+        var y=incident.clientY
+        
+        if(painting){
+            var newPoint={"x":x, "y":y}
+            drawCircle(x,y,2)
+            drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y)
+        }else{
+
+        }
+    }
+    canvas.onmouseup=function(incident){
+        painting=false;
+    }
+
+    function drawCircle(x,y,radius) {
+        context.fillStyle='blue';
+        context.beginPath();
+        context.arc(x,y,radius,0,Math.PI*2);
+        context.fill()
+    }
+
+    function drawLine(x1,y1,x2,y2){
+        context.beginPath();
+        context.strokeStyle= 'blue'
+        context.lineWidth= 5
+        context.moveTo(x1,y1)
+        context.lineTo(x2,y2)
+        context.stroke()
+        context.closePath()
+    }
+</script>
+</html>
